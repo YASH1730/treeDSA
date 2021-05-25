@@ -71,12 +71,7 @@ struct tree * insertNode(struct tree * root,int data)
 
 void main(){
 
-    struct tree *root = (struct tree *) malloc(sizeof(struct tree));
-    root->data = 0;
-    root->left = NULL;
-    root->right = NULL;
-    struct tree *m = root;
-
+    struct tree *root = NULL;
     int i = 5;
     int n;
     while (i>0)
@@ -87,9 +82,9 @@ void main(){
         i--;
     }
     printf("\n\tpre\t\n");
-    pretravers(m);
+    pretravers(root);
     printf("\n\tpost\t\n");
-    posttravers(m);
+    posttravers(root);
     printf("\n\tin\t\n");
-    intravers(m);
+    intravers(root);
     }
