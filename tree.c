@@ -50,19 +50,25 @@ struct tree * insertNode(struct tree * root,int data)
     if(root == NULL)
     {
         root = createNode(data);
+        return root;
     }
-    else if(data >= root->data) {
+    else if(data > root->data) {
         
         if (root != NULL)
         {
             root->right = insertNode(root->right,data);
         }
     }
-    else{
+    else if(data < root->data){
         if (root != NULL)
         {
             root->left = insertNode(root->left,data);
         }
+    }
+    else{
+        printf("Enter the diffrent data it could be >/< then root but not == to :: ");
+        scanf("%d",&data);
+        insertNode(root,data);
     }
 
     return root;
@@ -72,6 +78,7 @@ struct tree * insertNode(struct tree * root,int data)
 void main(){
 
     struct tree *root = NULL;
+
     int i = 5;
     int n;
     while (i>0)
